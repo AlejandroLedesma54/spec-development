@@ -271,7 +271,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         </form>
 
         <script>
-          document.addEventListener("DOMContentLoaded", () => {
+          document.addEventListener("astro:page-load", () => {
             const form = document.getElementById("contactForm");
             const successMsg = document.getElementById("successMessage");
 
