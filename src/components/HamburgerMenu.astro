@@ -28,17 +28,16 @@ import HeaderLink from "./HeaderLink.astro";
 </div>
 
 <!-- Script para manejar la apertura/cierre del menú -->
-<script is:script>
-document.addEventListener("astro:page-load", () => {
-  const button = document.getElementById("hamburger-button");
-  const menu = document.getElementById("mobile-menu");
+<script>
+  document.addEventListener("astro:page-load", () => {
+    const button = document.getElementById("hamburger-button");
+    const menu = document.getElementById("mobile-menu");
 
-  if (button && menu && !button.dataset.listener) {
-    button.addEventListener("click", () => {
-      menu.classList.toggle("hidden");
-    });
-    button.dataset.listener = "true"; // marcar como inicializado
-  }
-});
+    if (button && menu && !button.dataset.listener) {
+      button.addEventListener("click", () => {
+        menu.classList.toggle("hidden");
+      });
+      button.dataset.listener = "true";
+    }
+  });
 </script>
-
