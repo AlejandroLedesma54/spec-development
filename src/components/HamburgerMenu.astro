@@ -1,0 +1,44 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+
+---
+
+<!-- Botón hamburguesa -->
+<button
+  class="md:hidden focus:outline-none p-2 relative z-50"
+  id="hamburger-button"
+  aria-label="Toggle menu"
+>
+  <div class="space-y-1.5 transition-all duration-300" id="hamburger-icon">
+    <span class="block w-6 h-0.5 bg-black transition-transform origin-top-left"></span>
+    <span class="block w-6 h-0.5 bg-black transition-opacity"></span>
+    <span class="block w-6 h-0.5 bg-black transition-transform origin-bottom-left"></span>
+  </div>
+</button>
+
+<!-- Menú móvil (se muestra solo cuando se abre el botón hamburguesa) -->
+<div
+  id="mobile-menu"
+  class="md:hidden absolute top-full left-0 w-full bg-white shadow-md hidden flex flex-col gap-4 px-4 py-4 z-50"
+>
+  <HeaderLink href="/" class="block text-black py-2 px-4 rounded hover:bg-gray-100 transition-colors">Home</HeaderLink>
+<HeaderLink href="/gallery" class="block text-black py-2 px-4 rounded hover:bg-gray-100 transition-colors">Gallery</HeaderLink>
+<HeaderLink href="/contactus" class="block text-black py-2 px-4 rounded hover:bg-gray-100 transition-colors">Contact Us</HeaderLink>
+
+</div>
+
+<!-- Script para manejar la apertura/cierre del menú -->
+<script is:script>
+document.addEventListener("astro:page-load", () => {
+  const button = document.getElementById("hamburger-button");
+  const menu = document.getElementById("mobile-menu");
+
+  if (button && menu && !button.dataset.listener) {
+    button.addEventListener("click", () => {
+      menu.classList.toggle("hidden");
+    });
+    button.dataset.listener = "true"; // marcar como inicializado
+  }
+});
+</script>
+

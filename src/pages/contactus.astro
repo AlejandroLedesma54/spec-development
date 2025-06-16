@@ -1,0 +1,287 @@
+---
+// Server Only
+const name = "Astronauta";
+const emailTo = "david.aleho2013@gmail.com";
+
+import BaseHeadIndex from "../components/BaseHeadIndex.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHeadIndex title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+
+  <body class="bg-gray-900">
+    <Header />
+    <main>
+
+   <section
+  id="contact"
+  class="section5 flex flex-col items-center justify-center relative"
+>
+  <h1 class="font-bold text-white text-3xl">Let's Talk Luxury Living</h1>
+  <h4 class="text-white mb-6">Visualize your future home</h4>
+<br>
+  <form
+    id="contactForm"
+    class="w-full max-w-md mx-auto p-6 bg-white rounded-2xl shadow-lg space-y-6 dark:bg-gray-800"
+  >
+    <input type="hidden" name="_replyto" value={emailTo} />
+
+    <!-- Name -->
+    <div>
+      <label for="name" class="block mb-2 text-xl font-medium text-gray-900 dark:text-white">
+        Name
+      </label>
+      <input
+        type="text"
+        id="name"
+        name="name"
+        required
+        class="block w-full p-2 border border-gray-300 rounded-lg bg-gray-50 text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+      />
+    </div>
+
+    <!-- Phone -->
+    <div>
+      <label for="phone" class="block mb-2 text-xl font-medium text-gray-900 dark:text-white">
+        Phone Number
+      </label>
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        required
+        class="block w-full p-2 border border-gray-300 rounded-lg bg-gray-50 text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+      />
+    </div>
+
+    <!-- Email -->
+    <div>
+      <label for="email" class="block mb-2 text-xl font-medium text-gray-900 dark:text-white">
+        Email
+      </label>
+      <input
+        type="email"
+        id="email"
+        name="email"
+        required
+        class="block w-full p-2 border border-gray-300 rounded-lg bg-gray-50 text-sm focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+      />
+    </div>
+
+    <!-- Message -->
+    <div>
+      <label for="message" class="block mb-2 text-xl font-medium text-gray-900 dark:text-white">
+        Message
+      </label>
+      <textarea
+        id="message"
+        name="message"
+        rows="4"
+        required
+        class="block w-full p-4 border border-gray-300 rounded-lg bg-gray-50 text-base focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:text-white"
+      ></textarea>
+    </div>
+
+    <!-- Checkbox -->
+    <div class="flex items-center">
+      <input
+        id="checkbox-1"
+        type="checkbox"
+        required
+        class="w-4 h-4 text-gray-900 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:bg-gray-700 dark:border-gray-600"
+      />
+          <label
+              for="checkbox-1"
+              class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+            >I agree to be contacted by <a
+                href="http://www.movemiamirealty.com"
+                class="text-blue-600 hover:underline dark:text-blue-500"
+                >Move Miami</a
+              >.</label>
+    </div>
+
+    <!-- Submit -->
+    <button
+      type="submit"
+      class="w-full py-3 px-4 bg-neutral-600 text-white font-semibold rounded-lg hover:bg-white hover:text-neutral-800 border border-neutral-600 transition-colors duration-300"
+    >
+      Submit
+    </button>
+
+    <!-- Success Message -->
+    <div
+      id="successMessage"
+      class="hidden mt-4 text-center text-green-600 font-semibold transition-opacity duration-500 opacity-0"
+    >
+      ✅ Message sent successfully!
+    </div>
+  </form>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const form = document.getElementById("contactForm");
+      const successMsg = document.getElementById("successMessage");
+
+      if (!form || !successMsg) return;
+
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();               // Evita cualquier scroll o redirección
+        const formData = new FormData(form);
+
+        try {
+          const response = await fetch("https://formspree.io/f/xeokkpaa", {
+            method: "POST",
+            headers: { Accept: "application/json" },
+            body: formData,
+          });
+
+          if (response.ok) {
+            form.reset();
+
+            // Mostrar mensaje
+            successMsg.classList.remove("hidden");
+            successMsg.classList.add("opacity-100");
+
+            // Ocultar tras 4s
+            setTimeout(() => {
+              successMsg.classList.remove("opacity-100");
+              setTimeout(() => successMsg.classList.add("hidden"), 500);
+            }, 4000);
+          } else {
+            alert("Something went wrong. Please try again.");
+          }
+        } catch {
+          alert("Error submitting the form.");
+        }
+      });
+    });
+  </script>
+</section>
+
+
+    </main>
+    <Footer />
+  </body>
+ <style>
+    /* ==== Mobile Styles Only ==== */
+    @media (max-width: 768px) {
+      body {
+        font-size: 16px;
+      }
+
+      h1 {
+        font-size: 2.2em;
+      }
+
+      h2 {
+        font-size: 1.8em;
+      }
+
+      h3 {
+        font-size: 1.5em;
+      }
+
+      h4 {
+        font-size: 1.3em;
+      }
+      .section1 {
+        height: 100px;
+        background-image:
+          linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("/image1.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+      .section5 {
+        background-attachment: scroll;
+        background-position: center;
+        background-size: cover;
+        min-height: auto;
+        height: auto;
+        padding: 2rem 1rem;
+        text-align: center;
+      }
+
+      .section2 {
+        height: auto;
+        padding: 2rem 1rem;
+      }
+
+      .section2 .grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin: 1rem 0;
+      }
+
+      .section3 {
+        padding: 3rem 1rem;
+      }
+
+      .section4 {
+        height: auto;
+        padding: 2rem 1rem;
+      }
+
+      .section4 .grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .section4 img {
+        width: 100%;
+        height: auto;
+      }
+
+      form {
+        padding: 1rem !important;
+        width: 70%;
+      }
+
+      input,
+      textarea {
+        font-size: 1rem !important;
+      }
+
+      button {
+        width: 100% !important;
+      }
+
+      .grid-cols-2 {
+        grid-template-columns: 1fr !important;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+
+      .mx-20,
+      .my-25 {
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+      }
+
+      .w-[500px],
+      .h-[500px] {
+        width: 100% !important;
+        height: auto !important;
+      }
+
+      .p-6 {
+        padding: 1rem !important;
+      }
+    }
+    html {
+      scroll-behavior: smooth;
+    }
+  </style>
+</html>

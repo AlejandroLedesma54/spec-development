@@ -4,6 +4,7 @@
 import '../styles/global.css';
 import { SITE_TITLE } from '../consts';
 
+
 interface Props {
 	title: string;
 	description: string;
@@ -53,3 +54,7 @@ const { title, description, image = '/blog-placeholder-1.jpg' } = Astro.props;
 <meta property="twitter:title" content={title} />
 <meta property="twitter:description" content={description} />
 <meta property="twitter:image" content={new URL(image, Astro.url)} />
+<!-- ✅ Flowbite script global -->
+<script src="https://unpkg.com/flowbite@latest/dist/flowbite.min.js" defer></script>
+<!-- ✅ fontawesome script global -->
+<script src="https://kit.fontawesome.com/5d703b3268.js" crossorigin="anonymous"></script>
