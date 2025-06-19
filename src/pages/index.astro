@@ -55,54 +55,53 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
       <!-- <p id="current-time"></p> -->
 
       <!-- Section de galleria -->
-    <section class="section2" id="gallery">
-  <div class="grid grid-cols-2 grid-rows-1 m-20 gap-10">
-    
-    <!-- Columna 1 -->
-    <div class="flex flex-col">
-      <h3 class="text-xl font-semibold text-center">Exteriors</h3>
-      <div class="h-4"></div> <!-- Espacio debajo del título -->
-      <div class="relative flex-1">
-        <img
-          src="/image4.jpg"
-          alt=""
-          class="object-cover rounded-2xl shadow-xl w-full h-full"
-        />
-        <a href="/gallery" class="absolute bottom-4 right-4">
-          <button
-            class="bg-white text-black px-4 py-2 rounded-full border border-white shadow-md transition duration-[1000ms]
+      <section class="section2" id="gallery">
+        <div class="grid grid-cols-2 grid-rows-1 m-20 gap-10">
+          <!-- Columna 1 -->
+          <div class="flex flex-col">
+            <h3 class="text-xl font-semibold text-center">Exteriors</h3>
+            <div class="h-4"></div>
+            <!-- Espacio debajo del título -->
+            <div class="relative flex-1">
+              <img
+                src="/image4.jpg"
+                alt=""
+                class="object-cover rounded-2xl shadow-xl w-full h-full"
+              />
+              <a href="/gallery" class="absolute bottom-4 right-4">
+                <button
+                  class="bg-white text-black px-4 py-2 rounded-full border border-white shadow-md transition duration-[1000ms]
              hover:bg-transparent hover:text-black hover:border-black"
-          >
-            View Gallery
-          </button>
-        </a>
-      </div>
-    </div>
+                >
+                  View Gallery
+                </button>
+              </a>
+            </div>
+          </div>
 
-    <!-- Columna 2 -->
-    <div class="flex flex-col">
-      <h3 class="text-xl font-semibold text-center">Interiors</h3>
-      <div class="h-4"></div> <!-- Espacio debajo del título -->
-      <div class="relative flex-1">
-        <img
-          src="/image2.jpg"
-          alt=""
-          class="object-cover rounded-2xl shadow-xl w-full h-full"
-        />
-        <a href="/galleryinteriors" class="absolute bottom-4 right-4">
-          <button
-            class="bg-white text-black px-4 py-2 rounded-full border border-white shadow-md transition duration-[1000ms]
+          <!-- Columna 2 -->
+          <div class="flex flex-col">
+            <h3 class="text-xl font-semibold text-center">Interiors</h3>
+            <div class="h-4"></div>
+            <!-- Espacio debajo del título -->
+            <div class="relative flex-1">
+              <img
+                src="/image2.jpg"
+                alt=""
+                class="object-cover rounded-2xl shadow-xl w-full h-full"
+              />
+              <a href="/galleryinteriors" class="absolute bottom-4 right-4">
+                <button
+                  class="bg-white text-black px-4 py-2 rounded-full border border-white shadow-md transition duration-[1000ms]
              hover:bg-transparent hover:text-black hover:border-black"
-          >
-            View Gallery
-          </button>
-        </a>
-      </div>
-    </div>
-
-  </div>
-</section>
-
+                >
+                  View Gallery
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section class="section3 flex items-center justify-center">
         <div class="text-center">
@@ -254,11 +253,12 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
             <label
               for="checkbox-1"
               class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-            >I agree to be contacted by <a
+              >I agree to be contacted by <a
                 href="http://www.movemiamirealty.com"
                 class="text-blue-600 hover:underline dark:text-blue-500"
                 >Move Miami</a
-              >.</label>
+              >.</label
+            >
           </div>
 
           <!-- Submit -->
@@ -321,7 +321,6 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
           });
         </script>
         <script src="https://unpkg.com/alpinejs" defer></script>
-
       </section>
 
       <Footer />
@@ -349,8 +348,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         );
       </script>
     </main>
-  </body>
-  <style>
+  </body><style>
     /* ==== Mobile Styles Only ==== */
     @media (max-width: 768px) {
       body {
@@ -372,18 +370,13 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
       h4 {
         font-size: 1.3em;
       }
+
       .section1,
       .section3 {
         height: auto;
-        background-image:
-          linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-          url("/image1.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-attachment: fixed;
+        padding: 2rem 1rem;
       }
-      
+
       .section5 {
         background-attachment: scroll;
         background-position: center;
