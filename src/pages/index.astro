@@ -30,7 +30,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
             <a
               class="bg-neutral-600 text-white py-1 px-1 rounded-xl border border-black
     hover:bg-transparent hover:text-white transition-all duration-[1000ms] hover:border-white"
-              href="/gallery"
+              href="#gallery"
             >
               <button class="text-white transition-all duration-[1000ms]">
                 Check out gallery
@@ -55,45 +55,54 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
       <!-- <p id="current-time"></p> -->
 
       <!-- Section de galleria -->
-      <section class="section2">
-        <div class="flex items-center justify-center m-10">
-          <h1>Interiors</h1>
-        </div>
-        <div class="grid grid-cols-2 grid-rows-1 m-20 gap-10">
-          <div class="relative">
-            <img
-              src="/image4.jpg"
-              alt=""
-              class="object-cover rounded-2xl shadow-xl w-full h-full"
-            />
-            <a href="/gallery" class="absolute bottom-4 right-4">
-              <button
-                class="bg-white text-black px-4 py-2 rounded-full border border-white shadow-md transition duration-[1000ms]
-                 hover:bg-transparent hover:text-black hover:border-black"
-              >
-                View Gallery
-              </button>
-            </a>
-          </div>
+    <section class="section2" id="gallery">
+  <div class="grid grid-cols-2 grid-rows-1 m-20 gap-10">
+    
+    <!-- Columna 1 -->
+    <div class="flex flex-col">
+      <h3 class="text-xl font-semibold text-center">Interiors</h3>
+      <div class="h-4"></div> <!-- Espacio debajo del título -->
+      <div class="relative flex-1">
+        <img
+          src="/image4.jpg"
+          alt=""
+          class="object-cover rounded-2xl shadow-xl w-full h-full"
+        />
+        <a href="/gallery" class="absolute bottom-4 right-10">
+          <button
+            class="bg-white text-black px-4 py-2 rounded-full border border-white shadow-md transition duration-[1000ms]
+             hover:bg-transparent hover:text-black hover:border-black"
+          >
+            View Gallery
+          </button>
+        </a>
+      </div>
+    </div>
 
-          <!-- Imagen 2 -->
-          <div class="relative">
-            <img
-              src="/image2.jpg"
-              alt=""
-              class="object-cover rounded-2xl shadow-xl w-full h-full"
-            />
-            <a href="/gallery" class="absolute bottom-4 right-4">
-              <button
-                class="bg-white text-black px-4 py-2 rounded-full border border-white shadow-md transition duration-[1000ms]
-                 hover:bg-transparent hover:text-black hover:border-black"
-              >
-                View Gallery
-              </button>
-            </a>
-          </div>
-        </div>
-      </section>
+    <!-- Columna 2 -->
+    <div class="flex flex-col">
+      <h3 class="text-xl font-semibold text-center">Exteriors</h3>
+      <div class="h-4"></div> <!-- Espacio debajo del título -->
+      <div class="relative flex-1">
+        <img
+          src="/image2.jpg"
+          alt=""
+          class="object-cover rounded-2xl shadow-xl w-full h-full"
+        />
+        <a href="/galleryinteriors" class="absolute bottom-4 right-4">
+          <button
+            class="bg-white text-black px-4 py-2 rounded-full border border-white shadow-md transition duration-[1000ms]
+             hover:bg-transparent hover:text-black hover:border-black"
+          >
+            View Gallery
+          </button>
+        </a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
 
       <section class="section3 flex items-center justify-center">
         <div class="text-center">
@@ -109,7 +118,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
             <a
               class="bg-neutral-200 text-black py-1 px-1 rounded-xl border border-black
          hover:bg-transparent hover:text-white transition-all duration-[1000ms] hover:border-white"
-              href="#contact"
+              href="/videos"
               ><button
                 class="hover:text-white transition-all duration-[1000ms] px-4 py-4"
               >
@@ -245,12 +254,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
             <label
               for="checkbox-1"
               class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
-              >I agree to be contacted by <a
+            >I agree to be contacted by <a
                 href="http://www.movemiamirealty.com"
                 class="text-blue-600 hover:underline dark:text-blue-500"
                 >Move Miami</a
-              >.</label
-            >
+              >.</label>
           </div>
 
           <!-- Submit -->
@@ -312,6 +320,8 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
             });
           });
         </script>
+        <script src="https://unpkg.com/alpinejs" defer></script>
+
       </section>
 
       <Footer />
@@ -339,105 +349,119 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
         );
       </script>
     </main>
-  </body><style>
+  </body>
+  <style>
     /* ==== Mobile Styles Only ==== */
-   @media (max-width: 768px) {
-  body {
-    font-size: 18px;
-  }
+    @media (max-width: 768px) {
+      body {
+        font-size: 16px;
+      }
 
-  main {
-    padding: 1em;
-  }
+      h1 {
+        font-size: 2.2em;
+      }
 
-  .section1 {
-    min-height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/image1.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll; /* Evita errores en iOS/Android */
-    padding: 2rem 1rem;
-  }
+      h2 {
+        font-size: 1.8em;
+      }
 
-  .section3 {
-    min-height: 100vh;
-    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('/exterior3.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-attachment: scroll; /* Corrección clave para móviles */
-    padding: 2rem 1rem;
-  }
+      h3 {
+        font-size: 1.5em;
+      }
 
-  .section2 {
-    height: auto;
-    padding: 2rem 1rem;
-  }
+      h4 {
+        font-size: 1.3em;
+      }
+      .section1 {
+        height: 100px;
+        background-image:
+          linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+          url("/image1.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+      }
+      
+      .section5 {
+        background-attachment: scroll;
+        background-position: center;
+        background-size: cover;
+        min-height: auto;
+        height: auto;
+        padding: 2rem 1rem;
+        text-align: center;
+      }
 
-  .section4 {
-    height: auto;
-    padding: 2rem 1rem;
-  }
+      .section2 {
+        height: auto;
+        padding: 2rem 1rem;
+      }
 
-  .section4 .grid {
-    grid-template-columns: 1fr;
-    gap: 2rem;
-  }
+      .section2 .grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin: 1rem 0;
+      }
 
-  .section4 img {
-    width: 100%;
-    height: auto;
-  }
+      .section3 {
+        padding: 3rem 1rem;
+      }
 
-  .section5 {
-    min-height: 100vh;
-    background-attachment: scroll;
-    padding: 2rem 1rem;
-    text-align: center;
-  }
+      .section4 {
+        height: auto;
+        padding: 2rem 1rem;
+      }
 
-  form {
-    padding: 1rem !important;
-    width: 90% !important;
-  }
+      .section4 .grid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
 
-  input,
-  textarea {
-    font-size: 1rem !important;
-  }
+      .section4 img {
+        width: 100%;
+        height: auto;
+      }
 
-  button {
-    width: 100% !important;
-  }
+      form {
+        padding: 1rem !important;
+        width: 70%;
+      }
 
-  .grid-cols-2 {
-    grid-template-columns: 1fr !important;
-  }
+      input,
+      textarea {
+        font-size: 1rem !important;
+      }
 
-  .text-center {
-    text-align: center;
-  }
+      button {
+        width: 100% !important;
+      }
 
-  .mx-20,
-  .my-25 {
-    margin-left: 1rem !important;
-    margin-right: 1rem !important;
-    margin-top: 1rem !important;
-    margin-bottom: 1rem !important;
-  }
+      .grid-cols-2 {
+        grid-template-columns: 1fr !important;
+      }
 
-  .w-[500px],
-  .h-[500px] {
-    width: 100% !important;
-    height: auto !important;
-  }
+      .text-center {
+        text-align: center;
+      }
 
-  .p-6 {
-    padding: 1rem !important;
-  }
-}
+      .mx-20,
+      .my-25 {
+        margin-left: 1rem !important;
+        margin-right: 1rem !important;
+        margin-top: 1rem !important;
+        margin-bottom: 1rem !important;
+      }
 
+      .w-[500px],
+      .h-[500px] {
+        width: 100% !important;
+        height: auto !important;
+      }
+
+      .p-6 {
+        padding: 1rem !important;
+      }
     }
     html {
       scroll-behavior: smooth;

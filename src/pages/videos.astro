@@ -1,0 +1,77 @@
+---
+import BaseHeadIndex from "../components/BaseHeadIndex.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHeadIndex title={SITE_TITLE} description={SITE_DESCRIPTION} />
+  </head>
+  <body>
+    <Header />
+
+  <main class="px-4 py-10 max-w-7xl mx-auto space-y-16">
+
+  <!-- Sección de video principal -->
+  <section class="w-full">
+    <h2 class="text-2xl font-bold text-gray-900 mb-4 text-center sm:text-left">Featured Video</h2>
+    <div class="aspect-video w-full min-h-[240px] sm:min-h-[360px] md:min-h-[420px] lg:min-h-[500px] rounded-lg overflow-hidden shadow-lg">
+      <iframe
+        class="w-full h-full"
+        src="https://www.youtube.com/embed/o7zp8COV9_A"
+        title="Featured Video"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </section>
+
+  <!-- Galería de shorts tipo grid -->
+ <section class="w-full">
+  <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center sm:text-left">Shorts</h2>
+
+  <div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-6">
+    <!-- Short 1 -->
+    <div class="w-full aspect-video rounded-lg overflow-hidden shadow">
+      <iframe
+        class="w-full h-full"
+        src="https://www.youtube.com/embed/fP-_VOYIRPw"
+        title="YouTube Short 1"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <!-- Short 2 -->
+    <div class="w-full aspect-video rounded-lg overflow-hidden shadow">
+      <iframe
+        class="w-full h-full"
+        src="https://www.youtube.com/embed/fP-_VOYIRPw"
+        title="YouTube Short 2"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen
+      ></iframe>
+    </div>
+  </div>
+</section>
+
+
+
+</main>
+
+
+
+
+    <Footer />
+
+
+  </body>
+
+</html>
