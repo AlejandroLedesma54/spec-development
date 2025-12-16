@@ -16,62 +16,53 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
 
     <main class="px-4 py-10 max-w-7xl mx-auto space-y-16">
 
-      <!-- Video principal -->
-      <section class="w-full">
-        <h2 class="text-2xl font-bold text-gray-900 mb-4 text-center sm:text-left">
-          Featured Video
-        </h2>
-
-        <div class="aspect-video w-full min-h-[240px] sm:min-h-[360px] md:min-h-[420px] lg:min-h-[500px] rounded-lg overflow-hidden shadow-lg">
-          <video
-            class="w-full h-full object-cover"
-            controls
-            preload="metadata"
-            playsinline
-          >
-            <!-- 🔁 SOLO CAMBIA ESTE SRC -->
-            <source src="/videos/spec1.mp4" type="video/mp4" />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-      </section>
-
       <!-- Shorts -->
-      <section class="w-full">
-        <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center sm:text-left">
-          Shorts
-        </h2>
+<section class="w-full">
+  <h2 class="text-2xl font-bold text-gray-900 mb-6 text-center sm:text-left">
+    Shorts
+  </h2>
 
-        <div class="w-full grid grid-cols-1 sm:grid-cols-2 gap-6">
+  <div class="flex flex-col gap-10">
 
-          <!-- Short 1 -->
-          <div class="w-full aspect-video rounded-lg overflow-hidden shadow">
-            <video
-              class="w-full h-full object-cover"
-              controls
-              preload="metadata"
-              playsinline
-            >
-              <!-- 🔁 SOLO CAMBIA ESTE SRC -->
-              <source src="/videos/spec2.mp4" type="video/mp4" />
-            </video>
-          </div>
+    <!-- Short 1 -->
+    <div class="w-full max-w-[420px] mx-auto aspect-[9/16] rounded-lg overflow-hidden shadow">
+      <video
+        class="w-full h-full object-cover"
+        controls
+        preload="metadata"
+        playsinline
+      >
+        <source src="/videos/spec2.mp4" type="video/mp4" />
+      </video>
+    </div>
 
-          <!-- Short 2 -->
-          <div class="w-full aspect-video rounded-lg overflow-hidden shadow">
-            <video
-              class="w-full h-full object-cover"
-              controls
-              preload="metadata"
-              playsinline
-            >
-              <!-- 🔁 SOLO CAMBIA ESTE SRC -->
-              <source src="/videos/spec3.mp4" type="video/mp4" />
-            </video>
-          </div>
+    <!-- Short 2 -->
+    <div class="w-full max-w-[420px] mx-auto aspect-[9/16] rounded-lg overflow-hidden shadow">
+      <video
+        class="w-full h-full object-cover"
+        controls
+        preload="metadata"
+        playsinline
+      >
+        <source src="/videos/spec3.mp4" type="video/mp4" />
+      </video>
+    </div>
 
-        </div>
-      </section>
+    <!-- Short 3 -->
+    <div class="w-full max-w-[420px] mx-auto aspect-[9/16] rounded-lg overflow-hidden shadow">
+      <video
+        class="w-full h-full object-cover"
+        controls
+        preload="metadata"
+        playsinline
+      >
+        <source src="/videos/spec4.mp4" type="video/mp4" />
+      </video>
+    </div>
+
+  </div>
+</section>
+
 
     </main>
 
